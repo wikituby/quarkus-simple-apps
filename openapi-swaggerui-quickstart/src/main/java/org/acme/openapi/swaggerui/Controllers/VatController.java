@@ -12,7 +12,7 @@ public class VatController {
 
     @Inject
     VatService vatService;
-
+// version6
     //VatService vatService = new VatService();
 
     @GET

@@ -1,9 +1,9 @@
-package org.acme.openapi.swaggerui.Controllers;
-import jakarta.enterprise.context.ApplicationScoped;
+package org.acme.openapi.swaggerui.services;
+import jakarta.inject.Singleton;
 
 import org.acme.openapi.swaggerui.models.Vat;
 
-@ApplicationScoped
+@Singleton
 public class VatService {
 
     public String calculateNetAmount(double grossAmount) {

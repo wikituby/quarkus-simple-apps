@@ -1,8 +1,8 @@
 package org.acme.openapi.swaggerui.Controllers;
 
+import com.oracle.svm.core.annotate.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.inject.Inject;
 import org.acme.openapi.swaggerui.services.VatService;
 import org.acme.openapi.swaggerui.models.Vat;
 
@@ -10,7 +10,10 @@ import org.acme.openapi.swaggerui.models.Vat;
 @Path("/vatCalculator")
 public class VatController {
 
-    VatService vatService = new VatService();
+    @jakarta.inject.Inject
+    VatService vatService;
+
+    //VatService vatService = new VatService();
 
     @GET
     @Path("/netAmount")

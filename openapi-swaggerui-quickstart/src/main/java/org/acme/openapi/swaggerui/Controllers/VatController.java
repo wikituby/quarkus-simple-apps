@@ -1,9 +1,6 @@
 package org.acme.openapi.swaggerui.Controllers;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.inject.Inject;
 
@@ -12,7 +9,7 @@ public class VatController {
 
     @Inject
     VatService vatService;
-// version6
+
     //VatService vatService = new VatService();
 
     @GET

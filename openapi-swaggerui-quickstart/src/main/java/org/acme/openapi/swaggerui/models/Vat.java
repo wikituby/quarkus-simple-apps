@@ -8,9 +8,10 @@ public class Vat {
     public double rate;
     private String outPut;
 
-    public Vat() {}
+    public Vat() {
+    }
 
-    public Vat(double netAmount, double vat, double grossAmount, double rate, String outPut){
+    public Vat(double netAmount, double vat, double grossAmount, double rate, String outPut) {
         this.netAmount = netAmount;
         this.vat = vat;
         this.grossAmount = grossAmount;

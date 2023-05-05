@@ -1,7 +1,10 @@
 package org.acme.openapi.swaggerui.Controllers;
 
 import jakarta.inject.Inject;
-import jakarta.ws.rs.*;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import org.acme.openapi.swaggerui.services.VatService;
 
@@ -12,33 +15,31 @@ public class VatController {
     @Inject
     VatService vatService;
 
-    //VatService vatService = new VatService();
-
     @GET
-    @Path("/netAmount/{grossAmountFromClient}")
+    @Path("/netAmount")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateNetAmount(@PathParam("grossAmountFromClient") double grossAmountFromClient) {
-        return vatService.calculateNetAmount(grossAmountFromClient);
+    public String calculateNetAmount(@QueryParam("clientGrossAmount") double clientGrossAmount) {
+        return vatService.calculateNetAmount(clientGrossAmount);
     }
 
     @GET
-    @Path("/grossAmount/{clientVat}")
+    @Path("/grossAmount")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateGrossAmount(@PathParam("clientVat") double vat) {
-        return vatService.calculateGrossAmount(vat);
+    public String calculateGrossAmount(@QueryParam("clientVat") double clientVat) {
+        return vatService.calculateGrossAmount(clientVat);
     }
 
     @GET
-    @Path("/Rate/{clientGrossAmount}/{clientNetAmount}")
+    @Path("/Rate")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateRate(@PathParam("clientGrossAmount") double grossAmount, @PathParam("clientNetAmount") double netAmount) {
-        return vatService.calculateRate(grossAmount, netAmount);
+    public String calculateRate(@QueryParam("clientGrossAmount") double clientGrossAmount, @QueryParam("clientNetAmount") double clientNetAmount) {
+        return vatService.calculateRate(clientGrossAmount, clientNetAmount);
     }
 
     @GET
-    @Path("/Vat/{clientGrossAmount}/{clientNetAmount}")
+    @Path("/Vat")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateVat(@PathParam("clientGrossAmount") double grossAmount, @PathParam("clientNetAmount") double netAmount) {
-        return vatService.calculateVat(grossAmount, netAmount);
+    public String calculateVat(@QueryParam("clientGrossAmount") double clientGrossAmount, @QueryParam("clientNetAmount") double clientNetAmount) {
+        return vatService.calculateVat(clientGrossAmount, clientNetAmount);
     }
 }

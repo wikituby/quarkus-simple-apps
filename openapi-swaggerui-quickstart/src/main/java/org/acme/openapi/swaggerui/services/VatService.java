@@ -5,54 +5,58 @@ import org.acme.openapi.swaggerui.models.Vat;
 
 @ApplicationScoped
 public class VatService {
-    Vat vatObj = new Vat();
 
-    public String calculateNetAmount(double grossAmountFromClient) {
-        vatObj.setGrossAmount(grossAmountFromClient);
+    public String calculateNetAmount(double clientGrossAmount) {
+        Vat vatObj = new Vat();
+        vatObj.setGrossAmount(clientGrossAmount);
         vatObj.setRate(0.18);
         double calNetAmount = vatObj.getGrossAmount() - (vatObj.getGrossAmount() * vatObj.getRate());
         vatObj.setNetAmount(calNetAmount);
         double calVat = vatObj.getGrossAmount() - vatObj.getNetAmount();
         vatObj.setVat(calVat);
-        String output1 = String.format("NetAmount: %.2f, Vat: %.2f", vatObj.getNetAmount(), vatObj.getVat());
-        vatObj.setOutPut(output1);
+        String calOutPut = String.format("NetAmount: %.2f, Vat: %.2f", vatObj.getNetAmount(), vatObj.getVat());
+        vatObj.setOutPut(calOutPut);
         return vatObj.getOutPut();
     }
 
-    /*public String calculateNetAmount(double grossAmount) {
-        double rate = 0.18;
-        double netAmount = grossAmount - (grossAmount * rate);
-        double vat = grossAmount - netAmount;
-        String output = String.format("NetAmount = %.2f, Vat = %.2f", netAmount, vat);
-
-        return output;
-    }*/
-
-    public String calculateGrossAmount(double vat) {
-        double rate = 0.18;
-        double grossAmount = vat / rate;
-        double netAmount = grossAmount - vat;
-        String output = String.format("GrossAmount = %.2f, NetAmount = %.2f", grossAmount, netAmount);
-
-        return output;
+    public String calculateGrossAmount(double clientVat) {
+        Vat vatObj = new Vat();
+        vatObj.setVat(clientVat);
+        vatObj.setRate(0.18);
+        double calGrossAmount = vatObj.getVat() / vatObj.getRate();
+        vatObj.setGrossAmount(calGrossAmount);
+        double calNetAmount = vatObj.getGrossAmount() - vatObj.getVat();
+        vatObj.setNetAmount(calNetAmount);
+        String calOutput = String.format("GrossAmount = %.2f, NetAmount = %.2f", vatObj.getGrossAmount(), vatObj.getNetAmount());
+        vatObj.setOutPut(calOutput);
+        return vatObj.getOutPut();
 
     }
 
-    public String calculateRate(double grossAmount, double netAmount) {
-        double rate = (netAmount / grossAmount);
-        double vat = grossAmount - netAmount;
-        String output = String.format("Rate = %.2f, Vat = %.2f,", rate, vat);
-
-        return output;
+    public String calculateRate(double clientGrossAmount, double clientNetAmount) {
+        Vat vatObj = new Vat();
+        vatObj.setGrossAmount(clientGrossAmount);
+        vatObj.setNetAmount(clientNetAmount);
+        double calRate = (vatObj.getNetAmount() / vatObj.getGrossAmount());
+        double calVat = vatObj.getGrossAmount() - vatObj.getNetAmount();
+        vatObj.setRate(calRate);
+        vatObj.setVat(calVat);
+        String calOutput = String.format("Rate = %.2f, Vat = %.2f,", vatObj.getRate(), vatObj.getVat());
+        vatObj.setOutPut(calOutput);
+        return vatObj.getOutPut();
     }
 
 
-    public String calculateVat(double grossAmount, double netAmount) {
-        double vat = grossAmount - netAmount;
-        double rate = (netAmount / grossAmount);
-
-        String output = String.format("Vat = %.2f,Rate = %.2f,", vat, rate);
-
-        return output;
+    public String calculateVat(double clientGrossAmount, double clientNetAmount) {
+        Vat vatObj = new Vat();
+        vatObj.setGrossAmount(clientGrossAmount);
+        vatObj.setNetAmount(clientNetAmount);
+        double calRate = (vatObj.getNetAmount() / vatObj.getGrossAmount());
+        double calVat = vatObj.getGrossAmount() - vatObj.getNetAmount();
+        vatObj.setRate(calRate);
+        vatObj.setVat(calVat);
+        String calOutput = String.format("Vat = %.2f, Rate = %.2f,", vatObj.getVat(), vatObj.getRate());
+        vatObj.setOutPut(calOutput);
+        return vatObj.getOutPut();
     }
 }

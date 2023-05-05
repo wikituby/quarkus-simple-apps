@@ -1,7 +1,7 @@
-package org.acme.openapi.swaggerui.services;
+package org.acme.openapi.swaggerui.vatcalculator.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import org.acme.openapi.swaggerui.models.Vat;
+import org.acme.openapi.swaggerui.vatcalculator.models.Vat;
 
 @ApplicationScoped
 public class VatService {
@@ -30,7 +30,6 @@ public class VatService {
         String calOutput = String.format("GrossAmount = %.2f, NetAmount = %.2f", vatObj.getGrossAmount(), vatObj.getNetAmount());
         vatObj.setOutPut(calOutput);
         return vatObj.getOutPut();
-
     }
 
     public String calculateRate(double clientGrossAmount, double clientNetAmount) {
@@ -45,7 +44,6 @@ public class VatService {
         vatObj.setOutPut(calOutput);
         return vatObj.getOutPut();
     }
-
 
     public String calculateVat(double clientGrossAmount, double clientNetAmount) {
         Vat vatObj = new Vat();

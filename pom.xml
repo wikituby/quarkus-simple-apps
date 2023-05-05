@@ -13,6 +13,7 @@
         <module>neo4j-quickstart</module>
         -->
         <module>openapi-swaggerui-quickstart</module>
+        <module>NSSF</module>
     </modules>
 
     <build>

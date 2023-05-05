@@ -1,24 +1,24 @@
-package org.acme.openapi.swaggerui.models;
+package org.acme.openapi.swaggerui.nssfcalculator.models;
 
-public class Vat {
+public class Nssf {
     private double netAmount;
-    private double vat;
+    private double nssf;
     private double grossAmount;
     private double rate;
     private String outPut;
 
-    public Vat() {
+    public Nssf(){
+
     }
 
-    public Vat(double netAmount, double vat, double grossAmount, double rate, String outPut) {
+    public Nssf(double netAmount, double nssf, double grossAmount, double rate, String outPut) {
         this.netAmount = netAmount;
-        this.vat = vat;
+        this.nssf = nssf;
         this.grossAmount = grossAmount;
         this.rate = rate;
         this.outPut = outPut;
     }
 
-    // getters and setters
     public double getNetAmount() {
         return netAmount;
     }
@@ -27,12 +27,12 @@ public class Vat {
         this.netAmount = netAmount;
     }
 
-    public double getVat() {
-        return vat;
+    public double getNssf() {
+        return nssf;
     }
 
-    public void setVat(double vatSet) {
-        this.vat = vatSet;
+    public void setNssf(double nssf) {
+        this.nssf = nssf;
     }
 
     public double getGrossAmount() {
@@ -46,16 +46,14 @@ public class Vat {
     public double getRate() {
         return rate;
     }
-
-    public void setRate(double rate) {
+    public void setRate(double rate){
         this.rate = rate;
     }
-
-    public String getOutPut() {
+    public String getOutPut(){
         return outPut;
     }
-
-    public void setOutPut(String outPut) {
+    public void setOutPut(String outPut){
         this.outPut = outPut;
     }
+
 }

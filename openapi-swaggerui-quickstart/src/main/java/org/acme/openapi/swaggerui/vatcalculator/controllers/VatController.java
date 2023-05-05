@@ -1,4 +1,4 @@
-package org.acme.openapi.swaggerui.Controllers;
+package org.acme.openapi.swaggerui.vatcalculator.controllers;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -6,7 +6,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-import org.acme.openapi.swaggerui.services.VatService;
+import org.acme.openapi.swaggerui.vatcalculator.services.VatService;
 
 
 @Path("/vatCalculator")

@@ -17,8 +17,8 @@ public class VatController {
     @GET
     @Path("/netAmount")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateNetAmount(@QueryParam("grossAmount") double grossAmount) {
-        return vatService.calculateNetAmount(grossAmount);
+    public String calculateNetAmount(@QueryParam("grossAmount") double grossAmountFromClient) {
+        return vatService.calculateNetAmount(grossAmountFromClient);
     }
 
     @GET

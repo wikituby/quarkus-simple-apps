@@ -1,11 +1,10 @@
 package org.acme.openapi.swaggerui.models;
 
 public class Vat {
-
     private double netAmount;
     private double vat;
     private double grossAmount;
-    public double rate;
+    private double rate;
     private String outPut;
 
     public Vat() {
@@ -32,8 +31,8 @@ public class Vat {
         return vat;
     }
 
-    public void setVat(double vat) {
-        this.vat = vat;
+    public void setVat(double vatSet) {
+        this.vat = vatSet;
     }
 
     public double getGrossAmount() {

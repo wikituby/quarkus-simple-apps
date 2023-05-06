@@ -14,6 +14,7 @@ public class Loan {
 
     }
 
+    //Loan constructor
     public Loan(double amountToBeBorrowed, double interestToBePaidPerDay, double interestToBePaidPerWeek, double interestToBePaidPerMonth, double interestToBePaidPerYear, double ratePerMonth, String outPut) {
         this.amountToBeBorrowed = amountToBeBorrowed;
         this.interestToBePaidPerDay = interestToBePaidPerDay;
@@ -28,17 +29,14 @@ public class Loan {
     public double getAmountToBeBorrowed() {
         return amountToBeBorrowed;
     }
-
     public void setAmountToBeBorrowed(double amountToBeBorrowed) {
         this.amountToBeBorrowed = amountToBeBorrowed;
     }
-    //get and set ratePerMonthPercentage
 
     //get and set amountToBePaidPerDay
     public double getInterestToBePaidPerDay() {
         return interestToBePaidPerDay;
     }
-
     public void setInterestToBePaidPerDay(double interestToBePaidPerDay) {
         this.interestToBePaidPerDay = interestToBePaidPerDay;
     }
@@ -47,13 +45,11 @@ public class Loan {
     public double getInterestToBePaidPerWeek() {
         return interestToBePaidPerWeek;
     }
-
     public void setInterestToBePaidPerWeek(double interestToBePaidPerWeek) {
         this.interestToBePaidPerWeek = interestToBePaidPerWeek;
     }
 
     //get and set amountToBePaidPerMonth
-
     public double getInterestToBePaidPerMonth(){
         return interestToBePaidPerMonth;
     }
@@ -77,6 +73,7 @@ public class Loan {
         this.ratePerMonth = ratePerMonth;
     }
 
+    //get and set output
     public String getOutPut(){
         return outPut;
     }

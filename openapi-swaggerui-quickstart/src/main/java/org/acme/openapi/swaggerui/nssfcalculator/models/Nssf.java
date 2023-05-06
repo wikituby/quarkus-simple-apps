@@ -4,11 +4,11 @@ public class Nssf {
     private double netPay;
     private double EmployeeNssfContribution;
     private double EmployerNssfContribution;
+    private double NssfTotalContribution;
     private double grossAmount;
     private double employeeRate;
     private double employerRate;
-    private String nssfInfo = "1: Nssf Employeer Contribution = 10% of GrossPay.\n2: Nssf Employee Contribution = 5% of GrossPay\n3: Total Nssf Contribution from Employee and Employer = 15%";
-
+    private String nssfInfo = "1: Nssf Employer Contribution = 10% of GrossPay.\n2: Nssf Employee Contribution = 5% of GrossPay\n3: Total Nssf Contribution from Employee and Employer = 15%";
     private String outPut;
 
     public Nssf(){
@@ -24,6 +24,7 @@ public class Nssf {
         this.employerRate = employerRate;
         this.nssfInfo = nssfInfo;
         this.outPut = outPut;
+        this.NssfTotalContribution = NssfTotalContribution;
     }
     public String getNssfInfo() {
         return nssfInfo;
@@ -61,7 +62,6 @@ public class Nssf {
         this.employerRate = employerRate;
     }
 
-
     public double getGrossAmount() {
         return grossAmount;
     }
@@ -81,6 +81,12 @@ public class Nssf {
     }
     public void setOutPut(String outPut){
         this.outPut = outPut;
+    }
+    public double getNssfTotalContribution(){
+        return NssfTotalContribution;
+    }
+    public void setNssfTotalContribution(double NssfTotalContribution){
+        this.NssfTotalContribution = NssfTotalContribution;
     }
 
 }

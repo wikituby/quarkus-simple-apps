@@ -83,7 +83,9 @@ public class NssfService {
         nssfObj.setEmployerNssfContribution(calEmployerNssfContribution);
         double calNetAmount = nssfObj.getGrossAmount()-nssfObj.getEmployeeNssfContribution();
         nssfObj.setNetPay(calNetAmount);
-        String calOutput = String.format("Employee Nssf contribution = %.2f,Employer Nssf contribution = %.2f, Employee NetPay = %.2f,", nssfObj.getEmployeeNssfContribution(), nssfObj.getEmployerNssfContribution(), nssfObj.getNetPay());
+        double calNssfTotalContribution = nssfObj.getEmployerNssfContribution()+nssfObj.getEmployeeNssfContribution();
+        nssfObj.setNssfTotalContribution(calNssfTotalContribution);
+        String calOutput = String.format("Employee Nssf contribution = %.2f,Employer Nssf contribution = %.2f, Nssf total Contribution = %.2f,", nssfObj.getEmployeeNssfContribution(), nssfObj.getEmployerNssfContribution(), nssfObj.getNssfTotalContribution());
         nssfObj.setOutPut(calOutput);
         return nssfObj.getOutPut();
         }

@@ -85,9 +85,7 @@ public class LoanService {
         double calRatePerMonth = loanObj.getInterestToBePaidPerMonth()/loanObj.getAmountToBeBorrowed();
         loanObj.setRatePerMonth(calRatePerMonth);
 
-        double calInterestToBePaidPerMonth = (loanObj.getRatePerMonth()/100)*loanObj.getAmountToBeBorrowed();
-        loanObj.setInterestToBePaidPerMonth(calInterestToBePaidPerMonth);
-        double calInterestToBePaidPerDay = (((loanObj.getRatePerMonth()/100)*loanObj.getAmountToBeBorrowed())/30);
+        double calInterestToBePaidPerDay = (loanObj.getInterestToBePaidPerMonth()/30);
         loanObj.setInterestToBePaidPerDay(calInterestToBePaidPerDay);
         double calInterestToBePaidPerWeek = (loanObj.getInterestToBePaidPerDay()*7);
         loanObj.setInterestToBePaidPerWeek(calInterestToBePaidPerWeek);
@@ -104,12 +102,10 @@ public class LoanService {
         Loan loanObj = new Loan();
         loanObj.setInterestToBePaidPerMonth(clientInterestPerMonth);
         loanObj.setRatePerMonth(clientRatePerMonth);
-        double calAmountToBeBorrowed = ((loanObj.getRatePerMonth()/100)*loanObj.getAmountToBeBorrowed())/(loanObj.getRatePerMonth()/100);
+        double calAmountToBeBorrowed = (loanObj.getInterestToBePaidPerMonth()/(loanObj.getRatePerMonth()/100));
         loanObj.setAmountToBeBorrowed(calAmountToBeBorrowed);
 
-        double calInterestToBePaidPerMonth = (loanObj.getRatePerMonth()/100)*loanObj.getAmountToBeBorrowed();
-        loanObj.setInterestToBePaidPerMonth(calInterestToBePaidPerMonth);
-        double calInterestToBePaidPerDay = (((loanObj.getRatePerMonth()/100)*loanObj.getAmountToBeBorrowed())/30);
+        double calInterestToBePaidPerDay = (loanObj.getInterestToBePaidPerMonth()/30);
         loanObj.setInterestToBePaidPerDay(calInterestToBePaidPerDay);
         double calInterestToBePaidPerWeek = (loanObj.getInterestToBePaidPerDay()*7);
         loanObj.setInterestToBePaidPerWeek(calInterestToBePaidPerWeek);

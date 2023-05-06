@@ -43,7 +43,7 @@ public class LoanService {
         return loanObj.getOutPut();
     }
 
-    //calculating interest per week
+    //calculating interest per week new version
     public String calculateInterestToBePaidPerWeek(double clientAmountToBeBorrowed, double clientRatePerMonth) {
         Loan loanObj = new Loan();
         loanObj.setAmountToBeBorrowed(clientAmountToBeBorrowed);

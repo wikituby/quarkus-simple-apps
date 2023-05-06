@@ -16,30 +16,31 @@ import org.acme.openapi.swaggerui.nssfcalculator.services.NssfService;
         NssfService nssfService;
 
         @GET
-        @Path("/netAmount")
+        @Path("/Employee NetPay")
         @Produces(MediaType.TEXT_PLAIN)
-        public String calculateNetAmount(@QueryParam("clientGrossAmount") double clientGrossAmount) {
-            return nssfService.calculateNetAmount(clientGrossAmount);
+        public String calculateNetPay(@QueryParam("clientGrossAmount") double clientGrossAmount) {
+            return nssfService.calculateNetPay(clientGrossAmount);
         }
 
         @GET
-        @Path("/grossAmount")
+        @Path("/Employee grossPay")
         @Produces(MediaType.TEXT_PLAIN)
         public String calculateGrossAmount(@QueryParam("clientNssf") double clientNssf) {
             return nssfService.calculateGrossAmount(clientNssf);
         }
 
         @GET
-        @Path("/Rate")
+        @Path("/NSSF Rates And Info")
         @Produces(MediaType.TEXT_PLAIN)
-        public String calculateRate(@QueryParam("clientGrossAmount") double clientGrossAmount, @QueryParam("clientNetAmount") double clientNetAmount) {
-            return nssfService.calculateRate(clientGrossAmount, clientNetAmount);
+        public String calculateRatesAndInfo(){
+            return nssfService.calculateRatesAndInfo();
         }
 
         @GET
-        @Path("/Nssf")
+        @Path("/Nssf Contributions")
         @Produces(MediaType.TEXT_PLAIN)
-        public String calculateNssf(@QueryParam("clientGrossAmount") double clientGrossAmount) {
-            return nssfService.calculateNssf(clientGrossAmount);
+        public String calculateNssfContribution(@QueryParam("clientGrossAmount") double clientGrossAmount) {
+            return nssfService.calculateNssfContribution(clientGrossAmount);
         }
+
     }

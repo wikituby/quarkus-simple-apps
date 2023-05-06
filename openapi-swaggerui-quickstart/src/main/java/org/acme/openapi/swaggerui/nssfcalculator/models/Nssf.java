@@ -1,10 +1,14 @@
 package org.acme.openapi.swaggerui.nssfcalculator.models;
 
 public class Nssf {
-    private double netAmount;
-    private double nssf;
+    private double netPay;
+    private double EmployeeNssfContribution;
+    private double EmployerNssfContribution;
     private double grossAmount;
-    private double rate;
+    private double employeeRate;
+    private double employerRate;
+    private String nssfInfo = "1: Nssf Employeer Contribution = 10% of GrossPay.\n2: Nssf Employee Contribution = 5% of GrossPay\n3: Total Nssf Contribution from Employee and Employer = 15%";
+
     private String outPut;
 
     public Nssf(){
@@ -12,28 +16,51 @@ public class Nssf {
     }
 
     public Nssf(double netAmount, double nssf, double grossAmount, double rate, String outPut) {
-        this.netAmount = netAmount;
-        this.nssf = nssf;
+        this.netPay = netPay;
+        this.EmployeeNssfContribution = EmployeeNssfContribution;
+        this.EmployerNssfContribution = EmployerNssfContribution;
         this.grossAmount = grossAmount;
-        this.rate = rate;
+        this.employeeRate = employeeRate;
+        this.employerRate = employerRate;
+        this.nssfInfo = nssfInfo;
         this.outPut = outPut;
     }
-
-    public double getNetAmount() {
-        return netAmount;
+    public String getNssfInfo() {
+        return nssfInfo;
     }
 
-    public void setNetAmount(double netAmount) {
-        this.netAmount = netAmount;
+    public void setNssfInfo(String nssfInfo) {
+        this.nssfInfo = nssfInfo;
     }
 
-    public double getNssf() {
-        return nssf;
+    public double getNetPay() {
+        return netPay;
     }
 
-    public void setNssf(double nssf) {
-        this.nssf = nssf;
+    public void setNetPay(double netPay) {
+        this.netPay = netPay;
     }
+
+    public double getEmployeeNssfContribution() {
+        return EmployeeNssfContribution;
+    }
+    public void setEmployeeNssfContribution(double EmployeeNssfContribution) {
+        this.EmployeeNssfContribution = EmployeeNssfContribution;
+    }
+
+    public double getEmployerNssfContribution() {
+        return EmployerNssfContribution;
+    }
+    public void setEmployerNssfContribution(double EmployerNssfContribution) {
+        this.EmployerNssfContribution = EmployerNssfContribution;
+    }
+    public double getEmployerRate(){
+        return employerRate;
+    }
+    public void setEmployerRate(double employerRate){
+        this.employerRate = employerRate;
+    }
+
 
     public double getGrossAmount() {
         return grossAmount;
@@ -43,11 +70,11 @@ public class Nssf {
         this.grossAmount = grossAmount;
     }
 
-    public double getRate() {
-        return rate;
+    public double getEmployeeRate() {
+        return employeeRate;
     }
-    public void setRate(double rate){
-        this.rate = rate;
+    public void setEmployeeRate(double employeeRate){
+        this.employeeRate = employeeRate;
     }
     public String getOutPut(){
         return outPut;

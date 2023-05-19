@@ -18,7 +18,7 @@ public class Vat {
     public Vat(){
     }
 
-    // getters and setters for this file
+    // getters and setters for this file now
     public double getNetAmount() {
         return netAmount;
     }

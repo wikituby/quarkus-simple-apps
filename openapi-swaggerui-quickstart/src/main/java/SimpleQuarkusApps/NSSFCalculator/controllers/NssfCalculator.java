@@ -25,8 +25,8 @@ import SimpleQuarkusApps.NSSFCalculator.services.NssfService;
         @GET
         @Path("/Employee grossPay")
         @Produces(MediaType.TEXT_PLAIN)
-        public String calculateGrossAmount(@QueryParam("clientNssf") double clientNssf) {
-            return nssfService.calculateGrossAmount(clientNssf);
+        public String calculateGrossPay(@QueryParam("clientNssf") double clientNssf) {
+            return nssfService.calculateGrossPay(clientNssf);
         }
 
         @GET

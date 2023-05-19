@@ -5,18 +5,18 @@ public class Nssf {
     private double EmployeeNssfContribution;
     private double EmployerNssfContribution;
     private double NssfTotalContribution;
-    private double grossAmount;
+    private double grossPay;
     public static final double EMPLOYEE_RATE = 0.05;
     public static final double EMPLOYER_RATE = 0.1;
 
     public Nssf() {
     }
 
-    public Nssf(double netPay, double EmployeeNssfContribution, double grossAmount, double EmployerNssfContribution, double NssfTotalContribution) {
+    public Nssf(double netPay, double EmployeeNssfContribution, double grossPay, double EmployerNssfContribution, double NssfTotalContribution) {
         this.netPay = netPay;
         this.EmployeeNssfContribution = EmployeeNssfContribution;
         this.EmployerNssfContribution = EmployerNssfContribution;
-        this.grossAmount = grossAmount;
+        this.grossPay = grossPay;
         this.NssfTotalContribution = NssfTotalContribution;
     }
 
@@ -44,12 +44,12 @@ public class Nssf {
         this.EmployerNssfContribution = EmployerNssfContribution;
     }
 
-    public double getGrossAmount() {
-        return grossAmount;
+    public double getGrossPay() {
+        return grossPay;
     }
 
-    public void setGrossAmount(double grossAmount) {
-        this.grossAmount = grossAmount;
+    public void setGrossPay(double grossPay) {
+        this.grossPay = grossPay;
     }
 
     public double getNssfTotalContribution() {

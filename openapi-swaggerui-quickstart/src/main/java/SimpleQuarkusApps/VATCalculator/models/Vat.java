@@ -1,4 +1,4 @@
-package org.acme.openapi.swaggerui.vatcalculator.models;
+package SimpleQuarkusApps.VATCalculator.models;
 
 public class Vat {
     private double netAmount;
@@ -7,15 +7,15 @@ public class Vat {
     private double rate;
     private String outPut;
 
-    public Vat() {
-    }
-
     public Vat(double netAmount, double vat, double grossAmount, double rate, String outPut) {
         this.netAmount = netAmount;
         this.vat = vat;
         this.grossAmount = grossAmount;
         this.rate = rate;
         this.outPut = outPut;
+    }
+
+    public Vat(){
     }
 
     // getters and setters

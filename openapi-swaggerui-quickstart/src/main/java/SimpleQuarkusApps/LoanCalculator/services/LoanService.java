@@ -1,7 +1,7 @@
-package org.acme.openapi.swaggerui.loancalculator.services;
+package SimpleQuarkusApps.LoanCalculator.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import org.acme.openapi.swaggerui.loancalculator.models.Loan;
+import SimpleQuarkusApps.LoanCalculator.models.Loan;
 
 
 @ApplicationScoped
@@ -33,7 +33,6 @@ public class LoanService {
         loanObj.setRatePerMonth(clientRatePerMonth);
         double calInterestToBePaidPerMonth = (loanObj.getRatePerMonth() / 100) * loanObj.getAmountToBeBorrowed();
         loanObj.setInterestToBePaidPerMonth(calInterestToBePaidPerMonth);
-
         double calInterestToBePaidPerDay = (loanObj.getInterestToBePaidPerMonth()/30);
         loanObj.setInterestToBePaidPerDay(calInterestToBePaidPerDay);
         double calInterestToBePaidPerWeek = (loanObj.getInterestToBePaidPerDay() * 7);
@@ -52,7 +51,6 @@ public class LoanService {
         loanObj.setRatePerMonth(clientRatePerMonth);
         double calInterestToBePaidPerMonth = (loanObj.getRatePerMonth() / 100) * loanObj.getAmountToBeBorrowed();
         loanObj.setInterestToBePaidPerMonth(calInterestToBePaidPerMonth);
-
         double calInterestToBePaidPerDay = (loanObj.getInterestToBePaidPerMonth()/30);
         loanObj.setInterestToBePaidPerDay(calInterestToBePaidPerDay);
         double calInterestToBePaidPerWeek = (loanObj.getInterestToBePaidPerDay() * 7);
@@ -71,7 +69,6 @@ public class LoanService {
         loanObj.setRatePerMonth(clientRatePerMonth);
         double calInterestToBePaidPerMonth = (loanObj.getRatePerMonth() / 100) * loanObj.getAmountToBeBorrowed();
         loanObj.setInterestToBePaidPerMonth(calInterestToBePaidPerMonth);
-
         double calInterestToBePaidPerDay = (loanObj.getInterestToBePaidPerMonth()/30);
         loanObj.setInterestToBePaidPerDay(calInterestToBePaidPerDay);
         double calInterestToBePaidPerWeek = (loanObj.getInterestToBePaidPerDay() * 7);

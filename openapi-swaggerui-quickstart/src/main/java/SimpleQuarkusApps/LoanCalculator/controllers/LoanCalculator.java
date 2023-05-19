@@ -1,4 +1,4 @@
-package org.acme.openapi.swaggerui.loancalculator.controllers;
+package SimpleQuarkusApps.LoanCalculator.controllers;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -6,11 +6,11 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-import org.acme.openapi.swaggerui.loancalculator.services.LoanService;
+import SimpleQuarkusApps.LoanCalculator.services.LoanService;
 
 
 @Path("/loanCalculator")
-public class LoanController {
+public class LoanCalculator {
 
     @Inject
     LoanService loanService;

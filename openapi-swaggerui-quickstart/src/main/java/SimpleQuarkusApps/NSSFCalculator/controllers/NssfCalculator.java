@@ -1,4 +1,4 @@
-package org.acme.openapi.swaggerui.nssfcalculator.controllers;
+package SimpleQuarkusApps.NSSFCalculator.controllers;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -6,11 +6,11 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-import org.acme.openapi.swaggerui.nssfcalculator.services.NssfService;
+import SimpleQuarkusApps.NSSFCalculator.services.NssfService;
 
 
     @Path("/nssfCalculator")
-    public class NssfController {
+    public class NssfCalculator {
 
         @Inject
         NssfService nssfService;

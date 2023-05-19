@@ -1,4 +1,4 @@
-package org.acme.openapi.swaggerui.loancalculator.models;
+package SimpleQuarkusApps.LoanCalculator.models;
 
 
 public class Loan {
@@ -10,9 +10,7 @@ public class Loan {
     private double ratePerMonth;
     private String outPut;
 
-    public Loan(){
-
-    }
+    public Loan(){}
 
     //Loan constructor
     public Loan(double amountToBeBorrowed, double interestToBePaidPerDay, double interestToBePaidPerWeek, double interestToBePaidPerMonth, double interestToBePaidPerYear, double ratePerMonth, String outPut) {

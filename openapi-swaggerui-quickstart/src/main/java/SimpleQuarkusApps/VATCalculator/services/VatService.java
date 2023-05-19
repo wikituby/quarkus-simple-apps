@@ -1,7 +1,7 @@
-package org.acme.openapi.swaggerui.vatcalculator.services;
+package SimpleQuarkusApps.VATCalculator.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import org.acme.openapi.swaggerui.vatcalculator.models.Vat;
+import SimpleQuarkusApps.VATCalculator.models.*;
 
 @ApplicationScoped
 public class VatService {

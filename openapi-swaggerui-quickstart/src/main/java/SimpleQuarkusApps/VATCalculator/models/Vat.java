@@ -6,14 +6,15 @@ public class Vat {
     private double grossAmount;
     private double rate;
 
+    public Vat(){}
+
     public Vat(double netAmount, double vat, double grossAmount, double rate) {
         this.netAmount = netAmount;
         this.vat = vat;
         this.grossAmount = grossAmount;
         this.rate = rate;
     }
-    public Vat(){
-    }
+
     // getters and setters
     public double getNetAmount() {
         return netAmount;

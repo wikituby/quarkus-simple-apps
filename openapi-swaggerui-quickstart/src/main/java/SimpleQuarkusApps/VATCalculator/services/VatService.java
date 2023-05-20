@@ -14,8 +14,7 @@ public class VatService {
         vatObj.setNetAmount(calNetAmount);
         double calVat = vatObj.getGrossAmount() - vatObj.getNetAmount();
         vatObj.setVat(calVat);
-        String outPut = String.format("NetAmount: %.2f, Vat: %.2f", vatObj.getNetAmount(), vatObj.getVat());
-        return outPut;
+        return String.format("NetAmount: %.2f, Vat: %.2f", vatObj.getNetAmount(), vatObj.getVat());
     }
 
     public String calculateGrossAmount(double vat) {
@@ -26,8 +25,7 @@ public class VatService {
         vatObj.setGrossAmount(calGrossAmount);
         double calNetAmount = vatObj.getGrossAmount() - vatObj.getVat();
         vatObj.setNetAmount(calNetAmount);
-        String outPut = String.format("GrossAmount = %.2f, NetAmount = %.2f", vatObj.getGrossAmount(), vatObj.getNetAmount());
-        return outPut;
+        return String.format("GrossAmount = %.2f, NetAmount = %.2f", vatObj.getGrossAmount(), vatObj.getNetAmount());
 
     }
 
@@ -39,8 +37,7 @@ public class VatService {
         double calVat = vatObj.getGrossAmount() - vatObj.getNetAmount();
         vatObj.setRate(calRate);
         vatObj.setVat(calVat);
-        String outPut = String.format("Rate = %.2f, Vat = %.2f,", vatObj.getRate(), vatObj.getVat());
-        return outPut;
+        return String.format("Rate = %.2f, Vat = %.2f,", vatObj.getRate(), vatObj.getVat());
 
     }
 
@@ -52,8 +49,7 @@ public class VatService {
         double calVat = vatObj.getGrossAmount() - vatObj.getNetAmount();
         vatObj.setRate(calRate);
         vatObj.setVat(calVat);
-        String outPut = String.format("Vat = %.2f, Rate = %.2f,", vatObj.getVat(), vatObj.getRate());
-        return outPut;
+        return String.format("Vat = %.2f, Rate = %.2f,", vatObj.getVat(), vatObj.getRate());
 
     }
 }

@@ -6,8 +6,8 @@ public class Nssf {
     private double EmployerNssfContribution;
     private double NssfTotalContribution;
     private double grossPay;
-    public static final double EMPLOYEE_RATE = 0.05;
-    public static final double EMPLOYER_RATE = 0.1;
+    public final double EMPLOYEE_RATE = 0.05;
+    public final double EMPLOYER_RATE = 0.1;
 
     public Nssf() {
     }

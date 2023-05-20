@@ -11,35 +11,32 @@ public class NssfService {
     public String calculateNssfContribution(double grossPay){
         Nssf nssfObj = new Nssf();
         nssfObj.setGrossPay(grossPay);
-        double calEmployeeNssfContribution = nssfObj.getGrossPay()*nssfObj.EMPLOYEE_RATE;
+        double calEmployeeNssfContribution = nssfObj.EMPLOYEE_RATE * nssfObj.getGrossPay();
         nssfObj.setEmployeeNssfContribution(calEmployeeNssfContribution);
-        double calEmployerNssfContribution = nssfObj.getGrossPay()*nssfObj.EMPLOYER_RATE;
+        double calEmployerNssfContribution = nssfObj.EMPLOYER_RATE * nssfObj.getGrossPay();
         nssfObj.setEmployerNssfContribution(calEmployerNssfContribution);
         double calNetAmount = nssfObj.getGrossPay()-nssfObj.getEmployeeNssfContribution();
         nssfObj.setNetPay(calNetAmount);
         double calNssfTotalContribution = nssfObj.getEmployerNssfContribution()+nssfObj.getEmployeeNssfContribution();
         nssfObj.setNssfTotalContribution(calNssfTotalContribution);
-        String output = String.format("Employee Nssf contribution = %.2f,Employer Nssf contribution = %.2f, Nssf total Contribution = %.2f,", nssfObj.getEmployeeNssfContribution(), nssfObj.getEmployerNssfContribution(), nssfObj.getNssfTotalContribution());
-        return output;
+        return String.format("Employee Nssf contribution = %.2f,Employer Nssf contribution = %.2f, Nssf total Contribution = %.2f,", nssfObj.getEmployeeNssfContribution(), nssfObj.getEmployerNssfContribution(), nssfObj.getNssfTotalContribution());
     }
     public String calculateGrossPay(double employerNssfContribution) {
         Nssf nssfObj = new Nssf();
         nssfObj.setEmployerNssfContribution(employerNssfContribution);
         double calGrossAmount = nssfObj.getEmployerNssfContribution() / nssfObj.EMPLOYER_RATE;
         nssfObj.setGrossPay(calGrossAmount);
-        String output = String.format("GrossAmount = %.2f", nssfObj.getGrossPay());
-        return output;
+        return String.format("GrossPay = %.2f", nssfObj.getGrossPay());
     }
 
     public String calculateNetPay(double grossPay) {
         Nssf nssfObj = new Nssf();
         nssfObj.setGrossPay(grossPay);
-        double calNssf = nssfObj.getGrossPay()*nssfObj.EMPLOYEE_RATE;
+        double calNssf = nssfObj.EMPLOYEE_RATE * nssfObj.getGrossPay();
         nssfObj.setEmployeeNssfContribution(calNssf);
         double calNetAmount = nssfObj.getGrossPay()-nssfObj.getEmployeeNssfContribution();
         nssfObj.setNetPay(calNetAmount);
-        String output = String.format("Employee NetPay = %.2f, Employee Nssf Contribution= %.2f,", nssfObj.getNetPay(), nssfObj.getEmployeeNssfContribution());
-        return output;
+        return String.format("Employee NetPay = %.2f, Employee Nssf Contribution= %.2f,", nssfObj.getNetPay(), nssfObj.getEmployeeNssfContribution());
     }
 
 }

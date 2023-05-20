@@ -21,8 +21,7 @@ public class LoanService {
         loanObj.setInterestPerWeek(calInterestPerWeek);
         double calInterestPerYear = (loanObj.getInterestPerMonth() * 12);
         loanObj.setInterestPerYear(calInterestPerYear);
-        String output = String.format("Interest per Month = %.2f, Interest per Day = %.2f, Interest per Week = %.2f, Interest per Year = %.2f,", loanObj.getInterestPerMonth(), loanObj.getInterestPerDay(), loanObj.getInterestPerWeek(), loanObj.getInterestPerYear());
-        return output;
+        return String.format("Interest per Month = %.2f, Interest per Day = %.2f, Interest per Week = %.2f, Interest per Year = %.2f,", loanObj.getInterestPerMonth(), loanObj.getInterestPerDay(), loanObj.getInterestPerWeek(), loanObj.getInterestPerYear());
     }
 
     //calculating interest per day
@@ -38,8 +37,7 @@ public class LoanService {
         loanObj.setInterestPerWeek(calInterestPerWeek);
         double calInterestPerYear = (loanObj.getInterestPerMonth() * 12);
         loanObj.setInterestPerYear(calInterestPerYear);
-        String output = String.format("Interest per Day = %.2f, Interest per Week = %.2f, Interest per Year = %.2f, Interest per Month = %.2f, ", loanObj.getInterestPerDay(), loanObj.getInterestPerWeek(), loanObj.getInterestPerYear(), loanObj.getInterestPerMonth());
-        return output;
+        return String.format("Interest per Day = %.2f, Interest per Week = %.2f, Interest per Year = %.2f, Interest per Month = %.2f, ", loanObj.getInterestPerDay(), loanObj.getInterestPerWeek(), loanObj.getInterestPerYear(), loanObj.getInterestPerMonth());
 
     }
 
@@ -56,8 +54,7 @@ public class LoanService {
         loanObj.setInterestPerWeek(calInterestPerWeek);
         double calInterestPerYear = (loanObj.getInterestPerMonth() * 12);
         loanObj.setInterestPerYear(calInterestPerYear);
-        String output = String.format("Interest per Week = %.2f, Interest per Day = %.2f, Interest per Year = %.2f, Interest per Month = %.2f, ", loanObj.getInterestPerWeek(), loanObj.getInterestPerDay(), loanObj.getInterestPerYear(), loanObj.getInterestPerMonth());
-        return output;
+        return String.format("Interest per Week = %.2f, Interest per Day = %.2f, Interest per Year = %.2f, Interest per Month = %.2f, ", loanObj.getInterestPerWeek(), loanObj.getInterestPerDay(), loanObj.getInterestPerYear(), loanObj.getInterestPerMonth());
 
     }
 
@@ -74,8 +71,7 @@ public class LoanService {
         loanObj.setInterestPerWeek(calInterestPerWeek);
         double calInterestPerYear = (loanObj.getInterestPerMonth() * 12);
         loanObj.setInterestPerYear(calInterestPerYear);
-        String output = String.format("Interest per Year = %.2f, Interest per Month = %.2f, Interest per Day = %.2f, Interest per Week = %.2f", loanObj.getInterestPerYear(), loanObj.getInterestPerMonth(), loanObj.getInterestPerDay(), loanObj.getInterestPerWeek());
-        return output;
+        return String.format("Interest per Year = %.2f, Interest per Month = %.2f, Interest per Day = %.2f, Interest per Week = %.2f", loanObj.getInterestPerYear(), loanObj.getInterestPerMonth(), loanObj.getInterestPerDay(), loanObj.getInterestPerWeek());
 
     }
 
@@ -95,8 +91,7 @@ public class LoanService {
         double calInterestPerYear = (loanObj.getInterestPerMonth() * 12);
         loanObj.setInterestPerYear(calInterestPerYear);
 
-        String output = String.format("Rate per Month = %.2f, Interest per Month = %.2f, Interest per Day = %.2f, Interest per Week = %.2f", loanObj.getRatePerMonth(), loanObj.getInterestPerMonth(), loanObj.getInterestPerDay(), loanObj.getInterestPerWeek());
-        return output;
+        return String.format("Rate per Month = %.2f, Interest per Month = %.2f, Interest per Day = %.2f, Interest per Week = %.2f", loanObj.getRatePerMonth(), loanObj.getInterestPerMonth(), loanObj.getInterestPerDay(), loanObj.getInterestPerWeek());
 
 
     }
@@ -116,8 +111,7 @@ public class LoanService {
         double calInterestPerYear = (loanObj.getInterestPerMonth() * 12);
         loanObj.setInterestPerYear(calInterestPerYear);
 
-        String output = String.format("Amount to Borrow = %.2f, Interest per Month = %.2f, Interest per Day = %.2f, Interest per Week = %.2f", loanObj.getPrincipal(), loanObj.getInterestPerMonth(), loanObj.getInterestPerDay(), loanObj.getInterestPerWeek());
-        return output;
+        return String.format("Principal = %.2f, Interest per Month = %.2f, Interest per Day = %.2f, Interest per Week = %.2f", loanObj.getPrincipal(), loanObj.getInterestPerMonth(), loanObj.getInterestPerDay(), loanObj.getInterestPerWeek());
     }
 
 }

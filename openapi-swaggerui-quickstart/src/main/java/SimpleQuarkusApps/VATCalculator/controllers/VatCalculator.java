@@ -18,28 +18,28 @@ public class VatCalculator {
     @GET
     @Path("/netAmount")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateNetAmount(@QueryParam("clientGrossAmount") double clientGrossAmount) {
-        return vatService.calculateNetAmount(clientGrossAmount);
+    public String calculateNetAmount(@QueryParam("grossAmount") double grossAmount) {
+        return vatService.calculateNetAmount(grossAmount);
     }
 
     @GET
     @Path("/grossAmount")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateGrossAmount(@QueryParam("clientVat") double clientVat) {
-        return vatService.calculateGrossAmount(clientVat);
+    public String calculateGrossAmount(@QueryParam("vat") double vat) {
+        return vatService.calculateGrossAmount(vat);
     }
 
     @GET
     @Path("/Rate")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateRate(@QueryParam("clientGrossAmount") double clientGrossAmount, @QueryParam("clientNetAmount") double clientNetAmount) {
-        return vatService.calculateRate(clientGrossAmount, clientNetAmount);
+    public String calculateRate(@QueryParam("grossAmount") double grossAmount, @QueryParam("netAmount") double netAmount) {
+        return vatService.calculateRate(grossAmount, netAmount);
     }
 
     @GET
     @Path("/Vat")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateVat(@QueryParam("clientGrossAmount") double clientGrossAmount, @QueryParam("clientNetAmount") double clientNetAmount) {
-        return vatService.calculateVat(clientGrossAmount, clientNetAmount);
+    public String calculateVat(@QueryParam("grossAmount") double grossAmount, @QueryParam("netAmount") double netAmount) {
+        return vatService.calculateVat(grossAmount, netAmount);
     }
 }

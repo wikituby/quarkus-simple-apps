@@ -16,44 +16,44 @@ public class LoanCalculator {
     LoanService loanService;
 
     @GET
-    @Path("/interestPerMonth")
+    @Path("/interest Per Month")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateInterestToBePaidPerMonth(@QueryParam("clientAmountToBeBorrowed") double clientAmountToBeBorrowed, @QueryParam("clientRatePerMonth") double clientRatePerMonth) {
-        return loanService.calculateInterestToBePaidPerMonth(clientAmountToBeBorrowed, clientRatePerMonth);
+    public String calculateInterestPerMonth(@QueryParam("principal") double principal, @QueryParam("ratePerMonth") double ratePerMonth) {
+        return loanService.calculateInterestPerMonth(principal, ratePerMonth);
     }
 
     @GET
-    @Path("/interestPerDay")
+    @Path("/interest Per Day")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateInterestToBePaidPerDay(@QueryParam("clientAmountToBeBorrowed") double clientAmountToBeBorrowed, @QueryParam("clientRatePerMonth") double clientRatePerMonth) {
-        return loanService.calculateInterestToBePaidPerDay(clientAmountToBeBorrowed, clientRatePerMonth);
+    public String calculateInterestPerDay(@QueryParam("principal") double principal, @QueryParam("ratePerMonth") double ratePerMonth) {
+        return loanService.calculateInterestPerDay(principal, ratePerMonth);
     }
 
     @GET
-    @Path("/interestPerWeek")
+    @Path("/interest Per Week")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateInterestToBePaidPerWeek(@QueryParam("clientAmountToBeBorrowed") double clientAmountToBeBorrowed, @QueryParam("clientRatePerMonth") double clientRatePerMonth) {
-        return loanService.calculateInterestToBePaidPerWeek(clientAmountToBeBorrowed, clientRatePerMonth);
+    public String calculateInterestPerWeek(@QueryParam("principal") double principal, @QueryParam("ratePerMonth") double ratePerMonth) {
+        return loanService.calculateInterestPerWeek(principal, ratePerMonth);
     }
 
     @GET
-    @Path("/interestPerYear")
+    @Path("/interest Per Year")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateInterestToBePaidPerYear(@QueryParam("clientAmountToBeBorrowed") double clientAmountToBeBorrowed, @QueryParam("clientRatePerMonth") double clientRatePerMonth) {
-        return loanService.calculateInterestToBePaidPerYear(clientAmountToBeBorrowed, clientRatePerMonth);
+    public String calculateInterestPerYear(@QueryParam("principal") double principal, @QueryParam("clientRatePerMonth") double ratePerMonth) {
+        return loanService.calculateInterestPerYear(principal, ratePerMonth);
     }
 
     @GET
     @Path("/Rate Per Month")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateRatePerMonth(@QueryParam("clientInterestPerMonth") double clientInterestPerMonth, @QueryParam("clientAmountToBorrow") double clientAmountToBorrow) {
-        return loanService.calculateRatePerMonth(clientInterestPerMonth, clientAmountToBorrow);
+    public String calculateRatePerMonth(@QueryParam("interestPerMonth") double interestPerMonth, @QueryParam("principal") double principal) {
+        return loanService.calculateRatePerMonth(interestPerMonth, principal);
     }
 
     @GET
-    @Path("/Amount To Be Borrowed")
+    @Path("/Principal")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateAmountToBeBorrowed(@QueryParam("clientInterestPerMonth") double clientInterestPerMonth, @QueryParam("clientRatePerMonth") double clientRatePerMonth) {
-        return loanService.calculateAmountToBeBorrowed(clientInterestPerMonth, clientRatePerMonth);
+    public String calculatePrincipal(@QueryParam("interestPerMonth") double interestPerMonth, @QueryParam("ratePerMonth") double ratePerMonth) {
+        return loanService.calculatePrincipal(interestPerMonth, ratePerMonth);
     }
 }

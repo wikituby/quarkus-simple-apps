@@ -2,65 +2,63 @@ package SimpleQuarkusApps.LoanCalculator.models;
 
 
 public class Loan {
-    private double amountToBeBorrowed;
-    private double interestToBePaidPerDay;
-    private double interestToBePaidPerWeek;
-    private double interestToBePaidPerMonth;
-    private double interestToBePaidPerYear;
+    private double principal;
+    private double interestPerDay;
+    private double interestPerWeek;
+    private double interestPerMonth;
+    private double interestPerYear;
     private double ratePerMonth;
-    private String outPut;
 
     public Loan(){}
 
     //Loan constructor
-    public Loan(double amountToBeBorrowed, double interestToBePaidPerDay, double interestToBePaidPerWeek, double interestToBePaidPerMonth, double interestToBePaidPerYear, double ratePerMonth, String outPut) {
-        this.amountToBeBorrowed = amountToBeBorrowed;
-        this.interestToBePaidPerDay = interestToBePaidPerDay;
-        this.interestToBePaidPerWeek = interestToBePaidPerWeek;
-        this.interestToBePaidPerMonth = interestToBePaidPerMonth;
-        this.interestToBePaidPerYear = interestToBePaidPerYear;
+    public Loan(double principal, double interestPerDay, double interestPerWeek, double interestPerMonth, double interestPerYear, double ratePerMonth) {
+        this.principal = principal;
+        this.interestPerDay = interestPerDay;
+        this.interestPerWeek = interestPerWeek;
+        this.interestPerMonth = interestPerMonth;
+        this.interestPerYear = interestPerYear;
         this.ratePerMonth = ratePerMonth;
-        this.outPut = outPut;
     }
 
     //get and set amountToBorrowed
-    public double getAmountToBeBorrowed() {
-        return amountToBeBorrowed;
+    public double getPrincipal() {
+        return principal;
     }
-    public void setAmountToBeBorrowed(double amountToBeBorrowed) {
-        this.amountToBeBorrowed = amountToBeBorrowed;
+    public void setPrincipal(double principal) {
+        this.principal = principal;
     }
 
     //get and set amountToBePaidPerDay
-    public double getInterestToBePaidPerDay() {
-        return interestToBePaidPerDay;
+    public double getInterestPerDay() {
+        return interestPerDay;
     }
-    public void setInterestToBePaidPerDay(double interestToBePaidPerDay) {
-        this.interestToBePaidPerDay = interestToBePaidPerDay;
+    public void setInterestPerDay(double interestPerDay) {
+        this.interestPerDay = interestPerDay;
     }
 
     //get and set amountToBePaidPerWeek
-    public double getInterestToBePaidPerWeek() {
-        return interestToBePaidPerWeek;
+    public double getInterestPerWeek() {
+        return interestPerWeek;
     }
-    public void setInterestToBePaidPerWeek(double interestToBePaidPerWeek) {
-        this.interestToBePaidPerWeek = interestToBePaidPerWeek;
+    public void setInterestPerWeek(double interestPerWeek) {
+        this.interestPerWeek = interestPerWeek;
     }
 
     //get and set amountToBePaidPerMonth
-    public double getInterestToBePaidPerMonth(){
-        return interestToBePaidPerMonth;
+    public double getInterestPerMonth(){
+        return interestPerMonth;
     }
-    public void setInterestToBePaidPerMonth(double interestToBePaidPerMonth){
-        this.interestToBePaidPerMonth = interestToBePaidPerMonth;
+    public void setInterestPerMonth(double interestPerMonth){
+        this.interestPerMonth = interestPerMonth;
     }
 
     //get and set amountToBePaidPerYear
-    public double getInterestToBePaidPerYear(){
-        return interestToBePaidPerYear;
+    public double getInterestPerYear(){
+        return interestPerYear;
     }
-    public void setInterestToBePaidPerYear(double interestToBePaidPerYear){
-        this.interestToBePaidPerYear = interestToBePaidPerYear;
+    public void setInterestPerYear(double interestPerYear){
+        this.interestPerYear = interestPerYear;
     }
 
     //get and set ratePerMonth
@@ -70,14 +68,6 @@ public class Loan {
     public void setRatePerMonth(double ratePerMonth){
         this.ratePerMonth = ratePerMonth;
     }
-
-    //get and set output
-    public String getOutPut(){
-        return outPut;
-    }
-    public void setOutPut(String outPut){
-        this.outPut = outPut;
-    }
-
+    
 }
 

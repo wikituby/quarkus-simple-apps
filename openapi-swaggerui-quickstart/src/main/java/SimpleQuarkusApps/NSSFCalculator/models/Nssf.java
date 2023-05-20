@@ -32,17 +32,13 @@ public class Nssf {
         return EmployeeNssfContribution;
     }
 
-    public void setEmployeeNssfContribution(double EmployeeNssfContribution) {
-        this.EmployeeNssfContribution = EmployeeNssfContribution;
-    }
+    public void setEmployeeNssfContribution(double EmployeeNssfContribution) {this.EmployeeNssfContribution = EmployeeNssfContribution;}
 
     public double getEmployerNssfContribution() {
         return EmployerNssfContribution;
     }
 
-    public void setEmployerNssfContribution(double EmployerNssfContribution) {
-        this.EmployerNssfContribution = EmployerNssfContribution;
-    }
+    public void setEmployerNssfContribution(double EmployerNssfContribution) {this.EmployerNssfContribution = EmployerNssfContribution;}
 
     public double getGrossPay() {
         return grossPay;
@@ -56,8 +52,6 @@ public class Nssf {
         return NssfTotalContribution;
     }
 
-    public void setNssfTotalContribution(double NssfTotalContribution) {
-        this.NssfTotalContribution = NssfTotalContribution;
-    }
+    public void setNssfTotalContribution(double NssfTotalContribution) {this.NssfTotalContribution = NssfTotalContribution;}
 
 }

@@ -5,9 +5,9 @@ import SimpleQuarkusApps.NSSFCalculator.models.Nssf;
 @ApplicationScoped
 public class NssfService {
 
-    public String calculateNetPay(double clientGrossAmount) {
+    public String calculateNetPay(double grossPay) {
         Nssf nssfObj = new Nssf();
-        nssfObj.setGrossPay(clientGrossAmount);
+        nssfObj.setGrossPay(grossPay);
         double calNssf = nssfObj.getGrossPay()*nssfObj.EMPLOYEE_RATE;
         nssfObj.setEmployeeNssfContribution(calNssf);
         double calNetAmount = nssfObj.getGrossPay()-nssfObj.getEmployeeNssfContribution();
@@ -16,9 +16,9 @@ public class NssfService {
         return output;
     }
 
-    public String calculateGrossPay(double employerNssf) {
+    public String calculateGrossPay(double employerNssfContribution) {
         Nssf nssfObj = new Nssf();
-        nssfObj.setEmployerNssfContribution(employerNssf);
+        nssfObj.setEmployerNssfContribution(employerNssfContribution);
         double calGrossAmount = nssfObj.getEmployerNssfContribution() / nssfObj.EMPLOYER_RATE;
         nssfObj.setGrossPay(calGrossAmount);
         String output = String.format("GrossAmount = %.2f", nssfObj.getGrossPay());
@@ -28,9 +28,9 @@ public class NssfService {
     public String calculateRatesAndInfo() {
         return "1: Nssf Employer Contribution = 10% of GrossPay.\n2: Nssf Employee Contribution = 5% of GrossPay\n3: Total Nssf Contribution from Employee and Employer = 15%";
     }
-    public String calculateNssfContribution(double clientGrossAmount){
+    public String calculateNssfContribution(double grossPay){
         Nssf nssfObj = new Nssf();
-        nssfObj.setGrossPay(clientGrossAmount);
+        nssfObj.setGrossPay(grossPay);
         double calEmployeeNssfContribution = nssfObj.getGrossPay()*nssfObj.EMPLOYEE_RATE;
         nssfObj.setEmployeeNssfContribution(calEmployeeNssfContribution);
         double calEmployerNssfContribution = nssfObj.getGrossPay()*nssfObj.EMPLOYER_RATE;

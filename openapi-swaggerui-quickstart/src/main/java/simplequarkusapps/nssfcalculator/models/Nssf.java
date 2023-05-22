@@ -1,4 +1,4 @@
-package SimpleQuarkusApps.NSSFCalculator.models;
+package simplequarkusapps.nssfcalculator.models;
 
 public class Nssf {
     private double netPay;

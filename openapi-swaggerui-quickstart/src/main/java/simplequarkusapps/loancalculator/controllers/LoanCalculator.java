@@ -1,4 +1,4 @@
-package SimpleQuarkusApps.LoanCalculator.controllers;
+package simplequarkusapps.loancalculator.controllers;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -6,7 +6,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-import SimpleQuarkusApps.LoanCalculator.services.LoanService;
+import simplequarkusapps.loancalculator.services.LoanService;
 
 
 @Path("/loanCalculator")

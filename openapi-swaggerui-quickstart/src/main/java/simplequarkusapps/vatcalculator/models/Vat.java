@@ -1,4 +1,4 @@
-package SimpleQuarkusApps.VATCalculator.models;
+package simplequarkusapps.vatcalculator.models;
 
 public class Vat {
     private double netAmount;

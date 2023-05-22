@@ -1,7 +1,7 @@
-package SimpleQuarkusApps.VATCalculator.services;
+package simplequarkusapps.vatcalculator.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import SimpleQuarkusApps.VATCalculator.models.*;
+import simplequarkusapps.vatcalculator.models.*;
 
 @ApplicationScoped
 public class VatService {

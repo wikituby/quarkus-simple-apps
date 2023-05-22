@@ -1,6 +1,6 @@
-package SimpleQuarkusApps.NSSFCalculator.services;
+package simplequarkusapps.nssfcalculator.services;
 import jakarta.enterprise.context.ApplicationScoped;
-import SimpleQuarkusApps.NSSFCalculator.models.Nssf;
+import simplequarkusapps.nssfcalculator.models.Nssf;
 
 @ApplicationScoped
 public class NssfService {

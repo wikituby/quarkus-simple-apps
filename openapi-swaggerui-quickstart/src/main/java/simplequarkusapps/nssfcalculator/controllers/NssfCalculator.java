@@ -1,6 +1,6 @@
-package SimpleQuarkusApps.NSSFCalculator.controllers;
+package simplequarkusapps.nssfcalculator.controllers;
 
-import SimpleQuarkusApps.NSSFCalculator.services.NssfService;
+import simplequarkusapps.nssfcalculator.services.NssfService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

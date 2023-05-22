@@ -1,7 +1,7 @@
-package SimpleQuarkusApps.LoanCalculator.services;
+package simplequarkusapps.loancalculator.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import SimpleQuarkusApps.LoanCalculator.models.Loan;
+import simplequarkusapps.loancalculator.models.Loan;
 
 
 @ApplicationScoped

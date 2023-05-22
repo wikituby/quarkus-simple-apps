@@ -1,4 +1,4 @@
-package SimpleQuarkusApps.VATCalculator.controllers;
+package simplequarkusapps.vatcalculator.controllers;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -6,7 +6,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-import SimpleQuarkusApps.VATCalculator.services.*;
+import simplequarkusapps.vatcalculator.services.*;
 
 
 @Path("/vatCalculator")

@@ -1,4 +1,4 @@
-package SimpleQuarkusApps;
+package simplequarkusapps;
 import org.acme.openapi.swaggerui.OpenApiTest;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;

@@ -1,4 +1,4 @@
-package SimpleQuarkusApps.LoanCalculator.models;
+package simplequarkusapps.loancalculator.models;
 
 
 public class Loan {

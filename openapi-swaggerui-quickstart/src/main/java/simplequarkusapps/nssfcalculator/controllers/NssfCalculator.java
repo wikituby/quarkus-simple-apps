@@ -16,28 +16,28 @@ public class NssfCalculator {
     NssfService nssfService;
 
     @GET
-    @Path("/NSSF Rates And Info")
+    @Path("/nssf-rates-and-Info")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateRatesAndInfo() {
         return nssfService.calculateRatesAndInfo();
     }
 
     @GET
-    @Path("/Nssf_Contributions")
+    @Path("/nssf-contributions")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateNssfContribution(@QueryParam("grossPay") double grossPay) {
         return nssfService.calculateNssfContribution(grossPay);
     }
 
     @GET
-    @Path("/Employee_grossPay")
+    @Path("/employee-grossPay")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateGrossPay(@QueryParam("employerNssfContribution") double employerNssfContribution) {
         return nssfService.calculateGrossPay(employerNssfContribution);
     }
 
     @GET
-    @Path("/Employee_NetPay")
+    @Path("/employee-netPay")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateNetPay(@QueryParam("grossPay") double grossPay) {
         return nssfService.calculateNetPay(grossPay);

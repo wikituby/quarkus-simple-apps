@@ -7,7 +7,6 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import simplequarkusapps.loancalculator.services.LoanService;
-import simplequarkusapps.loancalculator.models.Loan;
 
 
 
@@ -19,7 +18,7 @@ public class LoanCalculator {
 
 
     @GET
-    @Path("/interest_per_month")
+    @Path("/interest-per-month")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateInterestPerMonth(@QueryParam("principal") double principal, @QueryParam("ratePerMonth") double ratePerMonth) {
         return loanService.calculateInterestPerMonth(principal, ratePerMonth);
@@ -33,21 +32,21 @@ public class LoanCalculator {
     }
 
     @GET
-    @Path("/interest_per_week")
+    @Path("/interest-per-week")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateInterestPerWeek(@QueryParam("principal") double principal, @QueryParam("ratePerMonth") double ratePerMonth) {
         return loanService.calculateInterestPerWeek(principal, ratePerMonth);
     }
 
     @GET
-    @Path("/interest_per_year")
+    @Path("/interest-per-year")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateInterestPerYear(@QueryParam("principal") double principal, @QueryParam("clientRatePerMonth") double ratePerMonth) {
         return loanService.calculateInterestPerYear(principal, ratePerMonth);
     }
 
     @GET
-    @Path("/rate_per_month")
+    @Path("/rate-per-month")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateRatePerMonth(@QueryParam("interestPerMonth") double interestPerMonth, @QueryParam("principal") double principal) {
         return loanService.calculateRatePerMonth(interestPerMonth, principal);

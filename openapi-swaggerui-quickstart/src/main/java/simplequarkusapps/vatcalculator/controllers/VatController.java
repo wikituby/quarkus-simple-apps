@@ -16,7 +16,7 @@ public class VatController {
     VatService vatService;
 
     @GET
-    @Path("/Vat")
+    @Path("/rat")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculateVat(@QueryParam("grossAmount") double grossAmount) {
         return vatService.calculateVat(grossAmount);

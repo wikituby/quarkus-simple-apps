@@ -6,14 +6,21 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-import simplequarkusapps.vatcalculator.services.*;
+import simplequarkusapps.vatcalculator.services.VatService;
 
 
 @Path("/vatCalculator")
-public class VatCalculator {
+public class VatController {
 
     @Inject
     VatService vatService;
+
+    @GET
+    @Path("/Vat")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String calculateVat(@QueryParam("grossAmount") double grossAmount) {
+        return vatService.calculateVat(grossAmount);
+    }
 
     @GET
     @Path("/netAmount")
@@ -32,14 +39,9 @@ public class VatCalculator {
     @GET
     @Path("/Rate")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateRate(@QueryParam("grossAmount") double grossAmount, @QueryParam("netAmount") double netAmount) {
-        return vatService.calculateRate(grossAmount, netAmount);
+    public String calculateRate(@QueryParam("grossAmount") double grossAmount, @QueryParam("vat") double vat) {
+        return vatService.calculateRate(grossAmount, vat);
     }
 
-    @GET
-    @Path("/Vat")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String calculateVat(@QueryParam("grossAmount") double grossAmount, @QueryParam("netAmount") double netAmount) {
-        return vatService.calculateVat(grossAmount, netAmount);
-    }
+
 }

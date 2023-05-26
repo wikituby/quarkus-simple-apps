@@ -1,12 +1,19 @@
 package simplequarkusapps.vatcalculator.models;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class Vat {
+
+    // Vat fields
     private double netAmount;
     private double vat;
     private double grossAmount;
     private double rate;
 
-    public Vat(){}
+    // constructors
+    public Vat() {
+    }
 
     public Vat(double netAmount, double vat, double grossAmount, double rate) {
         this.netAmount = netAmount;
@@ -28,8 +35,8 @@ public class Vat {
         return vat;
     }
 
-    public void setVat(double vatSet) {
-        this.vat = vatSet;
+    public void setVat(double vat) {
+        this.vat = vat;
     }
 
     public double getGrossAmount() {
@@ -40,7 +47,33 @@ public class Vat {
         this.grossAmount = grossAmount;
     }
 
-    public double getRate() {return rate;}
+    public double getRate() {
+        return rate;
+    }
 
-    public void setRate(double rate) {this.rate = rate;}
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    // calculations
+    public void calculateVat() {
+        this.rate = 0.18;
+        this.vat = this.grossAmount * this.rate;
+    }
+
+    public void calculateRate() {
+        this.rate = this.vat / this.grossAmount;
+    }
+
+    public void calculateNetAmount() {
+        this.rate = 0.18;
+        this.vat = this.grossAmount * this.rate;
+        this.netAmount = this.grossAmount - this.vat;
+    }
+
+    public void calculateGrossAmount() {
+        this.rate = 0.18;
+        this.grossAmount = this.vat / this.rate;
+        this.netAmount = this.grossAmount - this.vat;
+    }
 }

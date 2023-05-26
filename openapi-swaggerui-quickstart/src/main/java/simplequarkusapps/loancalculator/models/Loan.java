@@ -1,6 +1,8 @@
 package simplequarkusapps.loancalculator.models;
 
+import jakarta.enterprise.context.ApplicationScoped;
 
+@ApplicationScoped
 public class Loan {
     private double principal;
     private double interestPerDay;
@@ -9,7 +11,8 @@ public class Loan {
     private double interestPerYear;
     private double ratePerMonth;
 
-    public Loan(){}
+    public Loan() {
+    }
 
     //Loan constructor
     public Loan(double principal, double interestPerDay, double interestPerWeek, double interestPerMonth, double interestPerYear, double ratePerMonth) {
@@ -25,6 +28,7 @@ public class Loan {
     public double getPrincipal() {
         return principal;
     }
+
     public void setPrincipal(double principal) {
         this.principal = principal;
     }
@@ -33,6 +37,7 @@ public class Loan {
     public double getInterestPerDay() {
         return interestPerDay;
     }
+
     public void setInterestPerDay(double interestPerDay) {
         this.interestPerDay = interestPerDay;
     }
@@ -41,33 +46,63 @@ public class Loan {
     public double getInterestPerWeek() {
         return interestPerWeek;
     }
+
     public void setInterestPerWeek(double interestPerWeek) {
         this.interestPerWeek = interestPerWeek;
     }
 
     //get and set amountToBePaidPerMonth
-    public double getInterestPerMonth(){
+    public double getInterestPerMonth() {
         return interestPerMonth;
     }
-    public void setInterestPerMonth(double interestPerMonth){
+
+    public void setInterestPerMonth(double interestPerMonth) {
         this.interestPerMonth = interestPerMonth;
     }
 
     //get and set amountToBePaidPerYear
-    public double getInterestPerYear(){
+    public double getInterestPerYear() {
         return interestPerYear;
     }
-    public void setInterestPerYear(double interestPerYear){
+
+    public void setInterestPerYear(double interestPerYear) {
         this.interestPerYear = interestPerYear;
     }
 
     //get and set ratePerMonth
-    public double getRatePerMonth(){
+    public double getRatePerMonth() {
         return ratePerMonth;
     }
-    public void setRatePerMonth(double ratePerMonth){
+
+    public void setRatePerMonth(double ratePerMonth) {
         this.ratePerMonth = ratePerMonth;
     }
-    
+
+    //calculations
+    public void calculateInterestPerMonth() {
+        this.interestPerMonth = this.ratePerMonth * this.principal;
+    }
+    public void calculateInterestPerDay() {
+        this.interestPerMonth = this.ratePerMonth * this.principal;
+        this.interestPerDay = this.interestPerMonth / 30;
+    }
+    public void calculateInterestPerWeek() {
+        this.interestPerMonth = this.ratePerMonth * this.principal;
+        this.interestPerDay = this.interestPerMonth / 30;
+        this.interestPerWeek = this.interestPerDay * 7;
+    }
+    public void calculateInterestPerYear() {
+        this.interestPerMonth = this.ratePerMonth * this.principal;
+        this.interestPerYear = this.interestPerMonth * 12;
+    }
+
+    public void calculatePrincipal() {
+        this.principal = this.interestPerMonth / this.ratePerMonth;
+    }
+    public void calculateRatePerMonth(){
+        this.ratePerMonth = this.interestPerMonth/this.principal;
+    }
+
+
 }
 

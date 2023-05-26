@@ -1,23 +1,40 @@
 package simplequarkusapps.nssfcalculator.models;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class Nssf {
+
+    //fields
     private double netPay;
-    private double EmployeeNssfContribution;
-    private double EmployerNssfContribution;
-    private double NssfTotalContribution;
+    private double employeeNssfContribution;
+    private double employerNssfContribution;
+    private double nssfTotalContribution;
     private double grossPay;
     public final double EMPLOYEE_RATE = 0.05;
     public final double EMPLOYER_RATE = 0.1;
+    public String nssInfo;
 
+    //constructors
     public Nssf() {
     }
 
-    public Nssf(double netPay, double EmployeeNssfContribution, double grossPay, double EmployerNssfContribution, double NssfTotalContribution) {
+    public Nssf(double netPay, double employeeNssfContribution, double grossPay, double employerNssfContribution, double nssfTotalContribution, String nssInfo) {
         this.netPay = netPay;
-        this.EmployeeNssfContribution = EmployeeNssfContribution;
-        this.EmployerNssfContribution = EmployerNssfContribution;
+        this.employeeNssfContribution = employeeNssfContribution;
+        this.employerNssfContribution = employerNssfContribution;
         this.grossPay = grossPay;
-        this.NssfTotalContribution = NssfTotalContribution;
+        this.nssfTotalContribution = nssfTotalContribution;
+        this.nssInfo = nssInfo;
+    }
+
+    //getters anf setters
+    public String getNssInfo() {
+        return "1: Nssf Employer Contribution = 10% of GrossPay.\n2: Nssf Employee Contribution = 5% of GrossPay\n3: Total Nssf Contribution from Employee and Employer = 15% of GrossPay";
+    }
+
+    public void setNssInfo(String nssInfo) {
+        this.nssInfo = nssInfo;
     }
 
     public double getNetPay() {
@@ -29,16 +46,20 @@ public class Nssf {
     }
 
     public double getEmployeeNssfContribution() {
-        return EmployeeNssfContribution;
+        return employeeNssfContribution;
     }
 
-    public void setEmployeeNssfContribution(double EmployeeNssfContribution) {this.EmployeeNssfContribution = EmployeeNssfContribution;}
+    public void setEmployeeNssfContribution(double employeeNssfContribution) {
+        this.employeeNssfContribution = employeeNssfContribution;
+    }
 
     public double getEmployerNssfContribution() {
-        return EmployerNssfContribution;
+        return employerNssfContribution;
     }
 
-    public void setEmployerNssfContribution(double EmployerNssfContribution) {this.EmployerNssfContribution = EmployerNssfContribution;}
+    public void setEmployerNssfContribution(double employerNssfContribution) {
+        this.employerNssfContribution = employerNssfContribution;
+    }
 
     public double getGrossPay() {
         return grossPay;
@@ -49,9 +70,28 @@ public class Nssf {
     }
 
     public double getNssfTotalContribution() {
-        return NssfTotalContribution;
+        return nssfTotalContribution;
     }
 
-    public void setNssfTotalContribution(double NssfTotalContribution) {this.NssfTotalContribution = NssfTotalContribution;}
+    public void setNssfTotalContribution(double nssfTotalContribution) {
+        this.nssfTotalContribution = nssfTotalContribution;
+    }
+
+    //calculations
+    public void calculateNetPay() {
+        this.employeeNssfContribution = EMPLOYEE_RATE * this.grossPay;
+        this.netPay = this.grossPay - this.employeeNssfContribution;
+    }
+
+    public void calculateNssfContribution() {
+        this.employeeNssfContribution = EMPLOYEE_RATE * this.grossPay;
+        this.employerNssfContribution = EMPLOYER_RATE * this.grossPay;
+        this.nssfTotalContribution = this.employeeNssfContribution + employerNssfContribution;
+    }
+
+    public void calculateGrossPay(){
+        this.grossPay=this.employerNssfContribution/this.EMPLOYER_RATE;
+    }
+
 
 }
